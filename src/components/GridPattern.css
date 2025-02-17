@@ -1,0 +1,30 @@
+.grid-pattern {
+  position: fixed; /* Changed from absolute to fixed */
+  top: 50%;
+  left: 50%;
+  height: 100vh;
+  width: 300vh;
+  transform: translate(-50%, -50%); /* Center the grid container */
+
+  /* Grid cell sizing */
+  background-size: calc(300vh / 60) calc(100vh / 20);
+
+  /* Center the grid pattern itself */
+  background-position: center center;
+
+  /* Grid lines */
+  background-image: repeating-linear-gradient(
+      to right,
+      transparent 0,
+      transparent calc((300vh / 60) - 1px),
+      rgba(255, 255, 255, 0.11) 0,
+      rgba(255, 255, 255, 0.11) calc(300vh / 60)
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent calc((100vh / 20) - 1px),
+      rgba(255, 255, 255, 0.11) 0,
+      rgba(255, 255, 255, 0.11) calc(100vh / 20)
+    );
+}

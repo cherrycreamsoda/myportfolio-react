@@ -1,8 +1,13 @@
 import React from "react";
+import GridPattern from "./components/GridPattern";
+
 export default function App() {
   return (
-    <main>
-      <h1>Hello World.</h1>
-    </main>
+    <>
+      <GridPattern />
+      <main>
+        <h1>Hello World.</h1>
+      </main>
+    </>
   );
 }
