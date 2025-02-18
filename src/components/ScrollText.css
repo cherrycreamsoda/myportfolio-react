@@ -14,7 +14,7 @@
   text-align: center;
   font-weight: bold;
   font-size: clamp(2rem, 5vw, 4rem);
-  color: white;
+  color: #e5e5e5;
   white-space: normal;
   padding: 1rem;
 }
