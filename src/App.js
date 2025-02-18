@@ -5,7 +5,7 @@ import { FloatingBlobs } from "./components/FloatingBlobs";
 export default function App() {
   return (
     <>
-      <GridPattern />
+      <GridPattern squareSize={20} lineColor="rgba(255, 255, 255, 0.11)" />
       <FloatingBlobs />
       <main>
         <h1>Hello World.</h1>
