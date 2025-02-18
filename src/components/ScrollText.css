@@ -1,0 +1,26 @@
+.scroll-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  width: 100%;
+  pointer-events: none;
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(100px);
+  margin: 0 4px; /* Add horizontal spacing between words */
+}
+
+.text-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  font-weight: bold;
+  font-size: 4rem;
+  color: white;
+  white-space: nowrap;
+  padding: 2rem;
+}
