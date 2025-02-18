@@ -6,21 +6,39 @@
   z-index: 10;
   width: 100%;
   pointer-events: none;
-}
-
-.word {
-  display: inline-block;
-  opacity: 0;
-  transform: translateX(100px);
-  margin: 0 4px; /* Add horizontal spacing between words */
+  padding: 0 1rem;
 }
 
 .text-container {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   text-align: center;
   font-weight: bold;
-  font-size: 4rem;
+  font-size: clamp(2rem, 5vw, 4rem);
   color: white;
-  white-space: nowrap;
-  padding: 2rem;
+  white-space: normal;
+  padding: 1rem;
+}
+
+.word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(100px);
+  margin: 0 0.5rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+  .text-container {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+  }
+
+  .word {
+    margin: 0 0.25rem;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .text-container {
+    font-size: clamp(1.2rem, 3vw, 2rem);
+  }
 }

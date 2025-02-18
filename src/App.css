@@ -1,0 +1,42 @@
+body {
+  font-family: Arial, sans-serif;
+  color: white;
+  background-color: #000000;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+:root {
+  --app-height: 100%;
+}
+
+html,
+body {
+  height: var(--app-height);
+  width: 100vw;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Media query for orientation changes */
+@media screen and (orientation: landscape) {
+  .text-container {
+    transform: scale(0.8);
+  }
+}

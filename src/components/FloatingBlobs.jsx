@@ -29,14 +29,15 @@ export const FloatingBlobs = () => {
   };
 
   const createBlob = useCallback(() => {
-    const size = Math.random() * 80 + 40;
+    const minSize = Math.min(dimensions.width, dimensions.height);
+    const size = Math.random() * minSize * 0.15 + minSize * 0.05; // responsive size based on viewport
     return {
       id: Math.random(),
       x: Math.random() * dimensions.width,
       y: Math.random() * dimensions.height,
       size: size,
-      speedX: (Math.random() - 0.5) * 1.5,
-      speedY: (Math.random() - 0.5) * 1.5,
+      speedX: (Math.random() - 0.5) * (dimensions.width * 0.002),
+      speedY: (Math.random() - 0.5) * (dimensions.height * 0.002),
       color: `hsla(${Math.random() * 360}, 70%, 50%, 0.6)`,
       path: generateBlobPath(size),
     };
