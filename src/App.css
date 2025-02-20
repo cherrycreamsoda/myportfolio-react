@@ -57,6 +57,47 @@ html {
   scrollbar-width: none;
 }
 
+.content-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  color: white;
+  padding: 3rem 2rem 2rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-out;
+  min-height: 150vh; /* Extra height to hide rounded corners */
+  z-index: 50;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.content-section.visible {
+  transform: translateY(
+    calc(95% - var(--scroll-progress, 0%))
+  ); /* Slightly higher final position */
+}
+
+.content-section p {
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Add support for older browsers */
+@supports not (backdrop-filter: blur(10px)) {
+  .content-section {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+  }
+}
+
 /* Media query for orientation changes */
 @media screen and (orientation: landscape) {
   .text-container {
